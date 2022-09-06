@@ -1,7 +1,7 @@
 const userModel = require('../../models/utilisateur')
 
 module.exports.register = async (req, res) => {
-  const { username,  password } = req.body
+  const { username, password } = req.body
 
   if (!(!username || !password)) {
     try {
@@ -9,7 +9,6 @@ module.exports.register = async (req, res) => {
         username,
         password,
       })
-
       return res.status(201).json({ users: users._id })
     } catch (err) {
       res.status(500).json(err)

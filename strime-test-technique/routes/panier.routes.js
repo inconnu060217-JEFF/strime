@@ -9,7 +9,7 @@ router.get("/:id", paniers)
 router.post("/produit", createProduit)
 router.put("/produit/:id", editerProduit)
 router.delete("/produit/:id", supprimerProduit)
-router.get("/validation", validationPanier)
+router.post("/validation", validationPanier)
 
 
 
