@@ -10,16 +10,17 @@ services:
       - mongo_db:/data/db
   # Node API service
   api:
+    image: node:latest
     build: .
     ports:
       - 4000:3000
     environment:
       PORT: 3000
-      DB_LOCAL_NAME: strime
-      MONGO_URI: mongodb://localhost:27017
+      DB_NAME: strime
+      MONGODB_URI: mongodb://mongo_db:27017
       NAME: TrulyMittal
     depends_on:
-      - mongodb
+      - mongo_db
 
 volumes:
   mongo_db: {}

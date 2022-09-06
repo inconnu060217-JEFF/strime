@@ -1,7 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv')
 const authRoutes = require('./routes/auth.routes')
-const panierRoutes = require("./routes/panier.routes")
+const panierRoutes = require('./routes/panier.routes')
 require('./config/db')
 
 dotenv.config()
@@ -14,7 +14,6 @@ const port = process.env.PORT || 8000
 app.use('/api/user', authRoutes)
 app.use('/api/panier', panierRoutes)
 
-
-app.listen(port, '127.0.0.1', () => {
+app.listen(port, () => {
   console.log(`Server Listen on port ${port}`)
 })
