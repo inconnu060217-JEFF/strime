@@ -1,13 +1,11 @@
 const userModel = require('../../models/utilisateur')
 
 module.exports.register = async (req, res) => {
-  const { username, password } = req.body
-
-  if (!(!username || !password)) {
+  const { username } = req.body
+  if (username !== "") {
     try {
       const users = await userModel.create({
-        username,
-        password,
+        username
       })
       return res.status(201).json({ users: users._id })
     } catch (err) {
